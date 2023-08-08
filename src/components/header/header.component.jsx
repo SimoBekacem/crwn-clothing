@@ -1,11 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {  useSelector, useDispach } from 'react-redux';
 
 import './header.style.scss';
 import { ReactComponent as Logo} from '../../assets/crown.svg';
 import { auth } from '../../firebase/firebase.utils';
 
-const Header = ({ currentUser }) => {
+import CardIcon from "../card-icon/card-icon-component";
+import CartDropdown from '../card-dropdown/card-dropdown-component'
+
+
+const Header = () => {
+    const user = useSelector(state => state.user.value.user);
+    const isopen = useSelector(state => state.card.value.isOpen);
     return(
         <div className='header'>
             <Link className='logo-container' to='/'>
@@ -19,7 +26,7 @@ const Header = ({ currentUser }) => {
                     CONTACT
                 </Link>
                 {
-                    currentUser?
+                    user?
                     (<div className='option' onClick={()=>{auth.signOut()}}>
                         SING OUT
                     </div>) :
@@ -27,7 +34,13 @@ const Header = ({ currentUser }) => {
                         SING IN
                     </Link>)
                 }
+                <CardIcon />
             </div>
+            {
+                isopen?
+                <CartDropdown /> : null
+            }
+            
         </div>
     ) 
 }
