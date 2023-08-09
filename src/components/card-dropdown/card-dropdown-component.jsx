@@ -1,15 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { useSelector, useDispatch } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import './card-dropdown-style.scss';
 
 import CustomButton from  '../custom-button/custom-button.component';
 import CartItem from '../card-item/card-item-component';
 
-const CartDropdown = () => {
+import { togglewindow } from '../../redux/slices/card-slice';
+
+const CartDropdown = ({history}) => {
     const carditems = useSelector(state => state.card.value.carditems)
-    console.log("🚀 ~ file: card-dropdown-component.jsx:11 ~ CartDropdown ~ carditems:", carditems)
-    
+    const dispash = useDispatch()
+
     return(
         <div className='cart-dropdown'>
             <div className='cart-items'>
@@ -21,8 +24,11 @@ const CartDropdown = () => {
                     <span className='empty-message'>Your cart is empty</span>
                 )}
             </div>
-            <CustomButton>GO TO CHECKOUT</CustomButton>
+            <CustomButton onClick = {()=>{
+                    history.push('/checkout'); 
+                    dispash(togglewindow())
+                }}>GO TO CHECKOUT</CustomButton>
         </div>
     )
 };
-export default CartDropdown;
+export default withRouter(CartDropdown);
