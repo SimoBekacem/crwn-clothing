@@ -7,6 +7,7 @@ import MenuItem from '../menu-item/menu-item.component';
 
 const Directory = () => {
     const sections = useSelector(state => state.directory.value.sections);
+    
     return(
         <div className='directory-menu'>
             {

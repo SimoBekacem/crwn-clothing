@@ -255,5 +255,7 @@ const shopSlice = createSlice({
     }
 })
 
+export const { filterSHOP_DATA } = shopSlice.actions;
 export default shopSlice.reducer;
+
 
