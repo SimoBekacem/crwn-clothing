@@ -1,5 +1,5 @@
-import React, { Component, useEffect } from 'react';
-import { Switch , Route  } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import {  Route, Routes } from 'react-router-dom';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { useDispatch } from 'react-redux';
 
@@ -34,12 +34,12 @@ const App  = () => {
     return(
         <div className="App">
             <Header/>
-            <Switch>
-                <Route exact path='/' component={HomePage} />
-                <Route exact path='/shop' component={ShopPage} />
-                <Route exact path='/sign-in' component={SignInAndSignUp} />
-                <Route exact path='/checkout' component={Checkout} />
-            </Switch>
+            <Routes>
+                <Route path='/'  element={<HomePage />} />
+                <Route path='/shop/*' element={<ShopPage />} />
+                <Route path='/sign-in'  element={<SignInAndSignUp />} />
+                <Route path='/checkout'  element={<Checkout />} />
+            </Routes>
         </div>
     )
 }

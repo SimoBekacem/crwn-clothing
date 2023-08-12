@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 import './card-dropdown-style.scss';
 
@@ -12,7 +13,7 @@ import { togglewindow } from '../../redux/slices/card-slice';
 const CartDropdown = ({history}) => {
     const carditems = useSelector(state => state.card.value.carditems)
     const dispash = useDispatch()
-
+    const navigate = useNavigate();
     return(
         <div className='cart-dropdown'>
             <div className='cart-items'>
@@ -25,10 +26,10 @@ const CartDropdown = ({history}) => {
                 )}
             </div>
             <CustomButton onClick = {()=>{
-                    history.push('/checkout'); 
+                    navigate('/checkout'); 
                     dispash(togglewindow())
                 }}>GO TO CHECKOUT</CustomButton>
         </div>
     )
 };
-export default withRouter(CartDropdown);
+export default CartDropdown;
