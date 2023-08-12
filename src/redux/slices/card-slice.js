@@ -34,7 +34,7 @@ export const cardSlice = createSlice({
         },
         removeitem: (state, action) => {
             const itemtoremove = action.payload;
-            state.value.carditems = state.value.carditems.filter(item => item.id != itemtoremove.id)
+            state.value.carditems = state.value.carditems.filter(item => item.id !== itemtoremove.id)
         }
 
     }
