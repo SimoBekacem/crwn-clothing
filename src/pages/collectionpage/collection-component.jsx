@@ -5,8 +5,6 @@ import { useSelector} from 'react-redux';
 import './collection-style.scss';
 
 import CollectionItem from '../../components/colletion-item/collection-item.component';
-
-
 const filterdata = (shop_data, category) => {
     let items ;
     shop_data.forEach(element => {
@@ -16,11 +14,10 @@ const filterdata = (shop_data, category) => {
     })
     return items
 }
-
 const CollectionPage = () => {
-    const SHOP_DATA = useSelector(state => state.shop.value.SHOP_DATA);
+    const shop_data = useSelector(state => state.shop.value.shop_data);
     const { collectionId } = useParams();
-    const items = filterdata(SHOP_DATA, collectionId)
+    const items = filterdata(shop_data, collectionId)
     return(
         <div className='collection-page'>
             <h2 className='title'>{collectionId}</h2>

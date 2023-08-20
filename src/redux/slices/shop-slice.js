@@ -3,13 +3,13 @@ const shopSlice = createSlice({
     name: 'shop',
     initialState: {
         value:{
-            SHOP_DATA : []
+            shop_data : []
         }
     },
     reducers: {
         setSHOP_DATA(state, action) {
             const firebaseData = action.payload;
-            state.value.SHOP_DATA = firebaseData;
+            state.value.shop_data = firebaseData;
         },
     },
 })
