@@ -8,7 +8,6 @@ import StripeCheckoutButton from '../../components/stripe-checkout/stripe-checko
 
 const Checkout = () => {
     const carditems = useSelector(state => state.card.value.carditems);
-    console.log("🚀 ~ file: checkout-component.jsx:10 ~ Checkout ~ carditems:", carditems)
     let total = 0;
     carditems.forEach(element => {
         total += element.price * element.quantity;

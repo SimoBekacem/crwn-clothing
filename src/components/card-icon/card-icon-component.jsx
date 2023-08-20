@@ -10,7 +10,6 @@ import "./card-icon-style.scss";
 const CardIcon = () => {
     const dispach = useDispatch();
     const carditems = useSelector(state => state.card.value.carditems)
-    console.log("🚀 ~ file: card-icon-component.jsx:13 ~ CardIcon ~ carditems:", carditems)
     let numofitem = 0;
 
     carditems.forEach(element => {
