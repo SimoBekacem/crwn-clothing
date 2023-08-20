@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDocs, collection } from "firebase/firestore";
+
 import { firestore } from "../../firebase/firebase.utils";
-import { useEffect } from "react";
+
 import { setSHOP_DATA } from '../../redux/slices/shop-slice';
 
 import './collection-overview-style.scss';
 
 import CollectionPreview from '../../components/collection-preview/collection-preview.component';
+import { CircleLoader } from 'react-spinners';
 
 
 const CollectionOverview = () => {
@@ -24,12 +26,17 @@ const CollectionOverview = () => {
             console.error();
         }
     }
-    
+
     useEffect(()=>{
         bringData()
     },[])
 
-    return (
+    return !(shop_data.length==0)?(
+        <div className="loader">
+            <CircleLoader size='100' />
+        </div>
+    )
+    :(
         <div className="collection-overview">
             {
                 shop_data.map(item => {
