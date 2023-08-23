@@ -21,7 +21,7 @@ const CollectionPage = () => {
     const shop_data = useSelector(state => state.shop.value.shop_data);
     const { collectionId } = useParams();
     const items = filterdata(shop_data, collectionId)
-    return (shop_data.length==0)?(
+    return (shop_data.length === 0)?(
         <div className="loader">
             <CircleLoader size='100' />
         </div>
