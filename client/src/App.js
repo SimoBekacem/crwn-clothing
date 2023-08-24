@@ -35,10 +35,10 @@ const App  = () => {
         <div className="App">
             <Header/>
             <Routes>
-                <Route path='/'  element={<HomePage />} />
-                <Route path='/shop/*' element={<ShopPage />} />
-                <Route path='/sign-in'  element={<SignInAndSignUp />} />
-                <Route path='/checkout'  element={<Checkout />} />
+                <Route path='/crwn-clothing'  element={<HomePage />} />
+                <Route path='/crwn-clothing/shop/*' element={<ShopPage />} />
+                <Route path='/crwn-clothing/sign-in'  element={<SignInAndSignUp />} />
+                <Route path='/crwn-clothing/checkout'  element={<Checkout />} />
             </Routes>
         </div>
     )

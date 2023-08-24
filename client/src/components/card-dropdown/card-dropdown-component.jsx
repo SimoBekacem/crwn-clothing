@@ -26,7 +26,7 @@ const CartDropdown = ({history}) => {
                 )}
             </div>
             <CustomButton onClick = {()=>{
-                    navigate('/checkout'); 
+                    navigate('crwn-clothing/checkout'); 
                     dispash(togglewindow())
                 }}>GO TO CHECKOUT</CustomButton>
         </div>

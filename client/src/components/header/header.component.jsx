@@ -15,14 +15,14 @@ const Header = () => {
     const isopen = useSelector(state => state.card.value.isOpen);
     return(
         <div className='header'>
-            <Link className='logo-container' to='/'>
+            <Link className='logo-container' to='/crwn-clothing'>
                 <Logo className='logo' />
             </Link>
             <div className='options'>
-                <Link className='option' to='/shop'>
+                <Link className='option' to='/crwn-clothing/shop'>
                     SHOP
                 </Link>
-                <Link className='option' to='/shop'>
+                <Link className='option' to='/crwn-clothing/shop'>
                     CONTACT
                 </Link>
                 {
@@ -30,7 +30,7 @@ const Header = () => {
                     (<div className='option' onClick={()=>{auth.signOut()}}>
                         SING OUT
                     </div>) :
-                    (<Link to='sign-in'>
+                    (<Link to='/crwn-clothing/sign-in'>
                         SING IN
                     </Link>)
                 }
