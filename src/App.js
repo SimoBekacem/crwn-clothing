@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import {  Route, Routes } from 'react-router-dom';
-import { auth, createUserProfileDocument, firestore } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { useDispatch } from 'react-redux';
 
 import './app.style.scss';
