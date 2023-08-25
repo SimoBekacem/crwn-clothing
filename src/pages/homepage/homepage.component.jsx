@@ -5,15 +5,15 @@ import './homepage.style.scss';
 import Directory from '../../components/directory/directory.component';
 
 const HomePage = () => {
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(fetchData());
-    }, [dispatch]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchData());
+  }, [dispatch]);
 
-    return (
-        <div className='homepage'>
-            <Directory />
-        </div>
-    )
-} 
+  return (
+    <div className="homepage">
+      <Directory />
+    </div>
+  );
+};
 export default HomePage;
