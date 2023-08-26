@@ -1,19 +1,30 @@
-import { React, useEffect } from 'react';
+import { React, useEffect, Profiler } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchData } from '../../redux/slices/shop-slice';
 import './homepage.style.scss';
 import Directory from '../../components/directory/directory.component';
 
 const HomePage = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchData());
-  }, [dispatch]);
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(fetchData());
+	}, []);
 
-  return (
-    <div className="homepage">
-      <Directory />
-    </div>
-  );
+	return (
+		<div className="homepage">
+			<Profiler
+				id="directory"
+				onRender={(id, phase, acrualDuration) => {
+					console.log({
+						id,
+						phase,
+						acrualDuration,
+					});
+				}}
+			>
+				<Directory />
+			</Profiler>
+		</div>
+	);
 };
 export default HomePage;

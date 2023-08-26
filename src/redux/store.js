@@ -8,19 +8,19 @@ import directoryReducer from './slices/directory-slice';
 import shopReducer from './slices/shop-slice';
 
 const persistConfig = {
-  key: 'root',
-  version: 1,
-  storage,
+	key: 'root',
+	version: 1,
+	storage,
 };
 
 const reducer = combineReducers({
-  user: userReducer,
-  card: cardReducer,
-  directory: directoryReducer,
-  shop: shopReducer,
+	user: userReducer,
+	card: cardReducer,
+	directory: directoryReducer,
+	shop: shopReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
 export default configureStore({
-  reducer: persistedReducer,
+	reducer: persistedReducer,
 });

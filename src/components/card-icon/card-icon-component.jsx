@@ -8,23 +8,23 @@ import { togglewindow } from '../../redux/slices/card-slice';
 import './card-icon-style.scss';
 
 const CardIcon = () => {
-  const dispach = useDispatch();
-  const carditems = useSelector((state) => state.card.value.carditems);
-  let numofitem = 0;
+	const dispach = useDispatch();
+	const carditems = useSelector((state) => state.card.value.carditems);
+	let numofitem = 0;
 
-  carditems.forEach((element) => {
-    numofitem += element.quantity;
-  });
-  return (
-    <div
-      onClick={() => {
-        dispach(togglewindow());
-      }}
-      className="cart-icon"
-    >
-      <ShoppingIcon className="shopping-icon" />
-      <span className="item-count">{numofitem}</span>
-    </div>
-  );
+	carditems.forEach((element) => {
+		numofitem += element.quantity;
+	});
+	return (
+		<div
+			onClick={() => {
+				dispach(togglewindow());
+			}}
+			className="cart-icon"
+		>
+			<ShoppingIcon className="shopping-icon" />
+			<span className="item-count">{numofitem}</span>
+		</div>
+	);
 };
 export default CardIcon;
