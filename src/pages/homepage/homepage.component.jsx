@@ -8,7 +8,7 @@ const HomePage = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(fetchData());
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<div className="homepage">

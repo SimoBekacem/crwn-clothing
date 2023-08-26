@@ -11,7 +11,7 @@ const CollectionPreview = ({ title, items }) => {
 			<h1
 				className="title"
 				onClick={() => {
-					navigate(`/shop/${title.toLowerCase()}`);
+					navigate(`/crwn-clothing/shop/${title.toLowerCase()}`);
 				}}
 			>
 				{title.toUpperCase()}
